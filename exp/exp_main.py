@@ -44,7 +44,7 @@ class Exp_Main(Exp_Basic):
             'DLinear': DLinear,
             'NLinear': NLinear,
             'Linear': Linear,
-            'MGSformer': MGSformer,
+            'MGSformer_TST': MGSformer,
         }
         model = model_dict[self.args.model].Model(self.args).float()
 
