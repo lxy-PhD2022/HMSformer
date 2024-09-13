@@ -39,11 +39,9 @@ class Model(nn.Module):
         revin = configs.revin
         affine = configs.affine
         subtract_last = configs.subtract_last
-        
-        decomposition = configs.decomposition
         kernel_size = configs.kernel_size
         
-        self.model = PatchTST_backbone(configs, c_in=c_in, context_window = context_window, target_window=target_window, patch_len=patch_len, stride=stride, 
+        self.model = MGSformer_backbone(configs, c_in=c_in, context_window = context_window, target_window=target_window, patch_len=patch_len, stride=stride, 
                                   max_seq_len=max_seq_len, n_layers=n_layers, d_model=d_model,
                                   n_heads=n_heads, d_k=d_k, d_v=d_v, d_ff=d_ff, norm=norm, attn_dropout=attn_dropout,
                                   dropout=dropout, act=act, key_padding_mask=key_padding_mask, padding_var=padding_var, 
@@ -54,15 +52,7 @@ class Model(nn.Module):
     
     
     def forward(self, x):           # x: [Batch, Input length, Channel]
-        if self.decomposition:
-            res_init, trend_init = self.decomp_module(x)
-            res_init, trend_init = res_init.permute(0,2,1), trend_init.permute(0,2,1)  # x: [Batch, Channel, Input length]
-            res = self.model_res(res_init)
-            trend = self.model_trend(trend_init)
-            x = res + trend
-            x = x.permute(0,2,1)    # x: [Batch, Input length, Channel]
-        else:
-            x = x.permute(0,2,1)    # x: [Batch, Channel, Input length]
-            x = self.model(x)
-            x = x.permute(0,2,1)    # x: [Batch, Input length, Channel]
+        x = x.permute(0,2,1)    # x: [Batch, Channel, Input length]
+        x = self.model(x)
+        x = x.permute(0,2,1)    # x: [Batch, Input length, Channel]
         return x
