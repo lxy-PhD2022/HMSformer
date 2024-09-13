@@ -7,7 +7,7 @@ if [ ! -d "./logs/LongForecasting" ]; then
     mkdir ./logs/LongForecasting
 fi
 seq_len=96
-model_name=MGSformer
+model_name=MGSformer_TST
 model_id_name=Exchange
 
 for pred_len in 96

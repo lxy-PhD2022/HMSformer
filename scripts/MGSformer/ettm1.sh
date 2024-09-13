@@ -6,7 +6,7 @@ if [ ! -d "./logs/LongForecasting" ]; then
     mkdir ./logs/LongForecasting
 fi
 seq_len=96
-model_name=MGSformer
+model_name=MGSformer_TST
 
 root_path_name=./dataset/
 data_path_name=ETTm1.csv
