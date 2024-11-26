@@ -90,14 +90,15 @@ parser.add_argument('--period', type=int, default=24, help='accumulation_steps')
 parser.add_argument('--n', type=int, default=1, help='accumulation_steps')
 parser.add_argument('--n_intra', type=int, default=1, help='accumulation_steps')
 parser.add_argument('--compress_len', type=int, default=10, help='accumulation_steps')
+parser.add_argument('--x', type=int, default=5, help='x * n_heads = d_model')
+parser.add_argument('--traffic', type=int, default=0, help='if traffic')
 
 # GPU
 parser.add_argument('--use_gpu', type=bool, default=True, help='use gpu')
 parser.add_argument('--gpu', type=int, default=0, help='gpu')
 parser.add_argument('--use_multi_gpu', action='store_true', help='use multiple gpus', default=True)
-parser.add_argument('--devices', type=str, default='0,1', help='device ids of multile gpus')
+parser.add_argument('--devices', type=str, default='0,1,2', help='device ids of multile gpus')
 parser.add_argument('--test_flop', action='store_true', default=False, help='See utils/tools for usage')
-parser.add_argument('--x', type=int, default=5, help='x * n_heads = d_model')
 
 args = parser.parse_args()
 
