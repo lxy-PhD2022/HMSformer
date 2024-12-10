@@ -1,0 +1,259 @@
+Args in experiment:
+Namespace(accumulation_steps=2, activation='gelu', affine=0, batch_size=128, c_out=7, checkpoints='./checkpoints/', compress_len=10, d_ff=128, d_layers=1, d_model=16, data='ETTh1', data_path='ETTh1.csv', dec_in=7, decomposition=0, des='Exp', device_ids=[0, 1, 2], devices='0,1,2', distil=True, do_predict=False, dropout=0.3, dvices='0,1,2', e_layers=3, embed='timeF', embed_type=0, enc_in=7, factor=1, fc_dropout=0.3, features='M', freq='h', gpu=0, head_dropout=0.0, individual=0, is_training=1, itr=1, kernel_size=25, label_len=18, learning_rate=0.0001, loss='mse', lradj='type3', model='MGSformer_TST', model_id='96_96', momentum=0.8, moving_avg=25, n=2, n_heads=4, n_intra=2, num_workers=10, output_attention=False, padding_patch='end', patch_len=16, patience=8, pct_start=0.3, period=24, pred_len=96, random_seed=2021, revin=1, root_path='./dataset/', seq_len=96, stride=8, subtract_last=0, target='OT', test_flop=False, traffic=0, train_epochs=100, use_amp=False, use_gpu=True, use_multi_gpu=True, x=5)
+Use GPU: cuda:0
+>>>>>>>start training : 24_2_2_96_96_MGSformer_TST_ETTh1_ftM_sl96_ll18_pl96_dm20_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+module.model.backbone.W_pos_intra: 80
+module.model.backbone.W_pos: 480
+module.model.backbone.W_pos_coarse: 140
+module.model.backbone.W_P_intra.weight: 960
+module.model.backbone.W_P_intra.bias: 20
+module.model.backbone.W_P.weight: 240
+module.model.backbone.W_P.bias: 20
+module.model.backbone.W_P_coarse.weight: 1400
+module.model.backbone.W_P_coarse.bias: 20
+module.model.backbone.encoder.layers.0.self_attn.W_Q.weight: 400
+module.model.backbone.encoder.layers.0.self_attn.W_Q.bias: 20
+module.model.backbone.encoder.layers.0.self_attn.W_K.weight: 400
+module.model.backbone.encoder.layers.0.self_attn.W_K.bias: 20
+module.model.backbone.encoder.layers.0.self_attn.W_V.weight: 400
+module.model.backbone.encoder.layers.0.self_attn.W_V.bias: 20
+module.model.backbone.encoder.layers.0.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder.layers.0.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder.layers.0.norm_attn.1.weight: 20
+module.model.backbone.encoder.layers.0.norm_attn.1.bias: 20
+module.model.backbone.encoder.layers.0.ff.0.weight: 2560
+module.model.backbone.encoder.layers.0.ff.0.bias: 128
+module.model.backbone.encoder.layers.0.ff.3.weight: 2560
+module.model.backbone.encoder.layers.0.ff.3.bias: 20
+module.model.backbone.encoder.layers.0.norm_ffn.1.weight: 20
+module.model.backbone.encoder.layers.0.norm_ffn.1.bias: 20
+module.model.backbone.encoder.layers.1.self_attn.W_Q.weight: 400
+module.model.backbone.encoder.layers.1.self_attn.W_Q.bias: 20
+module.model.backbone.encoder.layers.1.self_attn.W_K.weight: 400
+module.model.backbone.encoder.layers.1.self_attn.W_K.bias: 20
+module.model.backbone.encoder.layers.1.self_attn.W_V.weight: 400
+module.model.backbone.encoder.layers.1.self_attn.W_V.bias: 20
+module.model.backbone.encoder.layers.1.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder.layers.1.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder.layers.1.norm_attn.1.weight: 20
+module.model.backbone.encoder.layers.1.norm_attn.1.bias: 20
+module.model.backbone.encoder.layers.1.ff.0.weight: 2560
+module.model.backbone.encoder.layers.1.ff.0.bias: 128
+module.model.backbone.encoder.layers.1.ff.3.weight: 2560
+module.model.backbone.encoder.layers.1.ff.3.bias: 20
+module.model.backbone.encoder.layers.1.norm_ffn.1.weight: 20
+module.model.backbone.encoder.layers.1.norm_ffn.1.bias: 20
+module.model.backbone.encoder.layers.2.self_attn.W_Q.weight: 400
+module.model.backbone.encoder.layers.2.self_attn.W_Q.bias: 20
+module.model.backbone.encoder.layers.2.self_attn.W_K.weight: 400
+module.model.backbone.encoder.layers.2.self_attn.W_K.bias: 20
+module.model.backbone.encoder.layers.2.self_attn.W_V.weight: 400
+module.model.backbone.encoder.layers.2.self_attn.W_V.bias: 20
+module.model.backbone.encoder.layers.2.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder.layers.2.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder.layers.2.norm_attn.1.weight: 20
+module.model.backbone.encoder.layers.2.norm_attn.1.bias: 20
+module.model.backbone.encoder.layers.2.ff.0.weight: 2560
+module.model.backbone.encoder.layers.2.ff.0.bias: 128
+module.model.backbone.encoder.layers.2.ff.3.weight: 2560
+module.model.backbone.encoder.layers.2.ff.3.bias: 20
+module.model.backbone.encoder.layers.2.norm_ffn.1.weight: 20
+module.model.backbone.encoder.layers.2.norm_ffn.1.bias: 20
+module.model.backbone.encoder_intra.layers.0.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_intra.layers.0.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_intra.layers.0.self_attn.W_K.weight: 400
+module.model.backbone.encoder_intra.layers.0.self_attn.W_K.bias: 20
+module.model.backbone.encoder_intra.layers.0.self_attn.W_V.weight: 400
+module.model.backbone.encoder_intra.layers.0.self_attn.W_V.bias: 20
+module.model.backbone.encoder_intra.layers.0.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_intra.layers.0.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_intra.layers.0.norm_attn.1.weight: 20
+module.model.backbone.encoder_intra.layers.0.norm_attn.1.bias: 20
+module.model.backbone.encoder_intra.layers.0.ff.0.weight: 2560
+module.model.backbone.encoder_intra.layers.0.ff.0.bias: 128
+module.model.backbone.encoder_intra.layers.0.ff.3.weight: 2560
+module.model.backbone.encoder_intra.layers.0.ff.3.bias: 20
+module.model.backbone.encoder_intra.layers.0.norm_ffn.1.weight: 20
+module.model.backbone.encoder_intra.layers.0.norm_ffn.1.bias: 20
+module.model.backbone.encoder_intra.layers.1.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_intra.layers.1.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_intra.layers.1.self_attn.W_K.weight: 400
+module.model.backbone.encoder_intra.layers.1.self_attn.W_K.bias: 20
+module.model.backbone.encoder_intra.layers.1.self_attn.W_V.weight: 400
+module.model.backbone.encoder_intra.layers.1.self_attn.W_V.bias: 20
+module.model.backbone.encoder_intra.layers.1.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_intra.layers.1.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_intra.layers.1.norm_attn.1.weight: 20
+module.model.backbone.encoder_intra.layers.1.norm_attn.1.bias: 20
+module.model.backbone.encoder_intra.layers.1.ff.0.weight: 2560
+module.model.backbone.encoder_intra.layers.1.ff.0.bias: 128
+module.model.backbone.encoder_intra.layers.1.ff.3.weight: 2560
+module.model.backbone.encoder_intra.layers.1.ff.3.bias: 20
+module.model.backbone.encoder_intra.layers.1.norm_ffn.1.weight: 20
+module.model.backbone.encoder_intra.layers.1.norm_ffn.1.bias: 20
+module.model.backbone.encoder_intra.layers.2.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_intra.layers.2.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_intra.layers.2.self_attn.W_K.weight: 400
+module.model.backbone.encoder_intra.layers.2.self_attn.W_K.bias: 20
+module.model.backbone.encoder_intra.layers.2.self_attn.W_V.weight: 400
+module.model.backbone.encoder_intra.layers.2.self_attn.W_V.bias: 20
+module.model.backbone.encoder_intra.layers.2.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_intra.layers.2.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_intra.layers.2.norm_attn.1.weight: 20
+module.model.backbone.encoder_intra.layers.2.norm_attn.1.bias: 20
+module.model.backbone.encoder_intra.layers.2.ff.0.weight: 2560
+module.model.backbone.encoder_intra.layers.2.ff.0.bias: 128
+module.model.backbone.encoder_intra.layers.2.ff.3.weight: 2560
+module.model.backbone.encoder_intra.layers.2.ff.3.bias: 20
+module.model.backbone.encoder_intra.layers.2.norm_ffn.1.weight: 20
+module.model.backbone.encoder_intra.layers.2.norm_ffn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_K.weight: 400
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_K.bias: 20
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_V.weight: 400
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_V.bias: 20
+module.model.backbone.encoder_coarse.layers.0.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_coarse.layers.0.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_coarse.layers.0.norm_attn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.0.norm_attn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.0.ff.0.weight: 2560
+module.model.backbone.encoder_coarse.layers.0.ff.0.bias: 128
+module.model.backbone.encoder_coarse.layers.0.ff.3.weight: 2560
+module.model.backbone.encoder_coarse.layers.0.ff.3.bias: 20
+module.model.backbone.encoder_coarse.layers.0.norm_ffn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.0.norm_ffn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_K.weight: 400
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_K.bias: 20
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_V.weight: 400
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_V.bias: 20
+module.model.backbone.encoder_coarse.layers.1.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_coarse.layers.1.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_coarse.layers.1.norm_attn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.1.norm_attn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.1.ff.0.weight: 2560
+module.model.backbone.encoder_coarse.layers.1.ff.0.bias: 128
+module.model.backbone.encoder_coarse.layers.1.ff.3.weight: 2560
+module.model.backbone.encoder_coarse.layers.1.ff.3.bias: 20
+module.model.backbone.encoder_coarse.layers.1.norm_ffn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.1.norm_ffn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_K.weight: 400
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_K.bias: 20
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_V.weight: 400
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_V.bias: 20
+module.model.backbone.encoder_coarse.layers.2.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_coarse.layers.2.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_coarse.layers.2.norm_attn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.2.norm_attn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.2.ff.0.weight: 2560
+module.model.backbone.encoder_coarse.layers.2.ff.0.bias: 128
+module.model.backbone.encoder_coarse.layers.2.ff.3.weight: 2560
+module.model.backbone.encoder_coarse.layers.2.ff.3.bias: 20
+module.model.backbone.encoder_coarse.layers.2.norm_ffn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.2.norm_ffn.1.bias: 20
+module.model.head.linear.weight: 193920
+module.model.head.linear.bias: 96
+module.model.compress.weight: 960
+module.model.compress.bias: 10
+Total trainable parameters: 261598
+train 8449
+val 2785
+test 2785
+Epoch: 1 cost time: 11.786720752716064
+[2024-12-07 20:10:43] [32mIntermediate result: 0.7167638  (Index 0)[0m
+Epoch: 1, Steps: 66 | Train Loss: 0.6597038 Vali Loss: 1.1452906 Test Loss: 0.7167638
+Validation loss decreased (inf --> 1.145291).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 2 cost time: 11.200232744216919
+[2024-12-07 20:10:58] [32mIntermediate result: 0.4186887  (Index 1)[0m
+Epoch: 2, Steps: 66 | Train Loss: 0.4891333 Vali Loss: 0.7476233 Test Loss: 0.4186887
+Validation loss decreased (1.145291 --> 0.747623).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 3 cost time: 10.330314636230469
+[2024-12-07 20:11:12] [32mIntermediate result: 0.4002828  (Index 2)[0m
+Epoch: 3, Steps: 66 | Train Loss: 0.4261138 Vali Loss: 0.7311389 Test Loss: 0.4002828
+Validation loss decreased (0.747623 --> 0.731139).  Saving model ...
+Updating learning rate to 0.0001
+Epoch: 4 cost time: 11.548579454421997
+[2024-12-07 20:11:28] [32mIntermediate result: 0.39577395  (Index 3)[0m
+Epoch: 4, Steps: 66 | Train Loss: 0.4034596 Vali Loss: 0.7197378 Test Loss: 0.3957739
+Validation loss decreased (0.731139 --> 0.719738).  Saving model ...
+Updating learning rate to 9e-05
+Epoch: 5 cost time: 11.14371371269226
+[2024-12-07 20:11:43] [32mIntermediate result: 0.3923442  (Index 4)[0m
+Epoch: 5, Steps: 66 | Train Loss: 0.3922498 Vali Loss: 0.7210015 Test Loss: 0.3923442
+EarlyStopping counter: 1 out of 8
+Updating learning rate to 8.1e-05
+Epoch: 6 cost time: 11.117892026901245
+[2024-12-07 20:11:58] [32mIntermediate result: 0.39076874  (Index 5)[0m
+Epoch: 6, Steps: 66 | Train Loss: 0.3860406 Vali Loss: 0.7075318 Test Loss: 0.3907687
+Validation loss decreased (0.719738 --> 0.707532).  Saving model ...
+Updating learning rate to 7.290000000000001e-05
+Epoch: 7 cost time: 11.393057823181152
+[2024-12-07 20:12:14] [32mIntermediate result: 0.3882199  (Index 6)[0m
+Epoch: 7, Steps: 66 | Train Loss: 0.3823580 Vali Loss: 0.7074298 Test Loss: 0.3882199
+Validation loss decreased (0.707532 --> 0.707430).  Saving model ...
+Updating learning rate to 6.561e-05
+Epoch: 8 cost time: 11.566287279129028
+[2024-12-07 20:12:29] [32mIntermediate result: 0.38843182  (Index 7)[0m
+Epoch: 8, Steps: 66 | Train Loss: 0.3785090 Vali Loss: 0.7048792 Test Loss: 0.3884318
+Validation loss decreased (0.707430 --> 0.704879).  Saving model ...
+Updating learning rate to 5.904900000000001e-05
+Epoch: 9 cost time: 10.799560070037842
+[2024-12-07 20:12:44] [32mIntermediate result: 0.38724875  (Index 8)[0m
+Epoch: 9, Steps: 66 | Train Loss: 0.3764173 Vali Loss: 0.7098466 Test Loss: 0.3872488
+EarlyStopping counter: 1 out of 8
+Updating learning rate to 5.3144100000000005e-05
+Epoch: 10 cost time: 11.672580480575562
+[2024-12-07 20:12:59] [32mIntermediate result: 0.38663915  (Index 9)[0m
+Epoch: 10, Steps: 66 | Train Loss: 0.3742885 Vali Loss: 0.6964883 Test Loss: 0.3866391
+Validation loss decreased (0.704879 --> 0.696488).  Saving model ...
+Updating learning rate to 4.782969000000001e-05
+Epoch: 11 cost time: 11.235286712646484
+[2024-12-07 20:13:14] [32mIntermediate result: 0.3864328  (Index 10)[0m
+Epoch: 11, Steps: 66 | Train Loss: 0.3726061 Vali Loss: 0.7073005 Test Loss: 0.3864328
+EarlyStopping counter: 1 out of 8
+Updating learning rate to 4.304672100000001e-05
+Epoch: 12 cost time: 11.660868644714355
+[2024-12-07 20:13:29] [32mIntermediate result: 0.3864371  (Index 11)[0m
+Epoch: 12, Steps: 66 | Train Loss: 0.3710381 Vali Loss: 0.7043535 Test Loss: 0.3864371
+EarlyStopping counter: 2 out of 8
+Updating learning rate to 3.874204890000001e-05
+Epoch: 13 cost time: 11.271382331848145
+[2024-12-07 20:13:45] [32mIntermediate result: 0.38529  (Index 12)[0m
+Epoch: 13, Steps: 66 | Train Loss: 0.3693529 Vali Loss: 0.7015508 Test Loss: 0.3852900
+EarlyStopping counter: 3 out of 8
+Updating learning rate to 3.486784401000001e-05
+Epoch: 14 cost time: 11.1733717918396
+[2024-12-07 20:14:00] [32mIntermediate result: 0.38578692  (Index 13)[0m
+Epoch: 14, Steps: 66 | Train Loss: 0.3684762 Vali Loss: 0.7035539 Test Loss: 0.3857869
+EarlyStopping counter: 4 out of 8
+Updating learning rate to 3.138105960900001e-05
+Epoch: 15 cost time: 11.30993938446045
+[2024-12-07 20:14:15] [32mIntermediate result: 0.3847052  (Index 14)[0m
+Epoch: 15, Steps: 66 | Train Loss: 0.3675211 Vali Loss: 0.6970913 Test Loss: 0.3847052
+EarlyStopping counter: 5 out of 8
+Updating learning rate to 2.824295364810001e-05
+Epoch: 16 cost time: 11.42269515991211
+[2024-12-07 20:14:30] [32mIntermediate result: 0.38439223  (Index 15)[0m
+Epoch: 16, Steps: 66 | Train Loss: 0.3665428 Vali Loss: 0.7060644 Test Loss: 0.3843922
+EarlyStopping counter: 6 out of 8
+Updating learning rate to 2.541865828329001e-05
+Epoch: 17 cost time: 10.734694480895996
+[2024-12-07 20:14:45] [32mIntermediate result: 0.38517842  (Index 16)[0m
+Epoch: 17, Steps: 66 | Train Loss: 0.3653817 Vali Loss: 0.6989607 Test Loss: 0.3851784
+EarlyStopping counter: 7 out of 8
+Updating learning rate to 2.287679245496101e-05
+Epoch: 18 cost time: 10.919575452804565
+[2024-12-07 20:15:00] [32mIntermediate result: 0.3844627  (Index 17)[0m
+Epoch: 18, Steps: 66 | Train Loss: 0.3650193 Vali Loss: 0.6993821 Test Loss: 0.3844627
+EarlyStopping counter: 8 out of 8
+Early stopping
+>>>>>>>testing : 24_2_2_96_96_MGSformer_TST_ETTh1_ftM_sl96_ll18_pl96_dm20_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2785
+mse:0.3866392970085144, mae:0.3993625044822693, rse:0.5896148681640625
+[2024-12-07 20:15:02] [32mFinal result: 0.3866393[0m
