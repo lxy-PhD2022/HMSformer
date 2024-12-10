@@ -1,0 +1,669 @@
+Args in experiment:
+Namespace(accumulation_steps=2, activation='gelu', affine=0, batch_size=48, c_out=7, checkpoints='./checkpoints/', compress_len=10, d_ff=128, d_layers=1, d_model=16, data='custom', data_path='national_illness.csv', dec_in=7, decomposition=0, des='Exp', device_ids=[0, 1, 2], devices='0,1,2', distil=True, do_predict=False, dropout=0.3, dvices='0,1,2', e_layers=3, embed='timeF', embed_type=0, enc_in=7, factor=1, fc_dropout=0.3, features='M', freq='h', gpu=0, head_dropout=0.0, individual=0, is_training=1, itr=1, kernel_size=25, label_len=18, learning_rate=0.0025, loss='mse', lradj='constant', model='MGSformer_TST', model_id='36_60', momentum=0.8, moving_avg=25, n=1, n_heads=4, n_intra=1, num_workers=10, output_attention=False, padding_patch='end', patch_len=24, patience=8, pct_start=0.3, period=24, pred_len=60, random_seed=2021, revin=1, root_path='./dataset/', seq_len=36, stride=2, subtract_last=0, target='OT', test_flop=False, traffic=0, train_epochs=100, use_amp=False, use_gpu=True, use_multi_gpu=True, x=5)
+Use GPU: cuda:0
+>>>>>>>start training : 24_1_1_36_60_MGSformer_TST_custom_ftM_sl36_ll18_pl60_dm20_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+module.model.backbone.W_pos_intra: 40
+module.model.backbone.W_pos: 480
+module.model.backbone.W_pos_coarse: 140
+module.model.backbone.W_P_intra.weight: 960
+module.model.backbone.W_P_intra.bias: 20
+module.model.backbone.W_P.weight: 480
+module.model.backbone.W_P.bias: 20
+module.model.backbone.W_P_coarse.weight: 1400
+module.model.backbone.W_P_coarse.bias: 20
+module.model.backbone.encoder.layers.0.self_attn.W_Q.weight: 400
+module.model.backbone.encoder.layers.0.self_attn.W_Q.bias: 20
+module.model.backbone.encoder.layers.0.self_attn.W_K.weight: 400
+module.model.backbone.encoder.layers.0.self_attn.W_K.bias: 20
+module.model.backbone.encoder.layers.0.self_attn.W_V.weight: 400
+module.model.backbone.encoder.layers.0.self_attn.W_V.bias: 20
+module.model.backbone.encoder.layers.0.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder.layers.0.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder.layers.0.norm_attn.1.weight: 20
+module.model.backbone.encoder.layers.0.norm_attn.1.bias: 20
+module.model.backbone.encoder.layers.0.ff.0.weight: 2560
+module.model.backbone.encoder.layers.0.ff.0.bias: 128
+module.model.backbone.encoder.layers.0.ff.3.weight: 2560
+module.model.backbone.encoder.layers.0.ff.3.bias: 20
+module.model.backbone.encoder.layers.0.norm_ffn.1.weight: 20
+module.model.backbone.encoder.layers.0.norm_ffn.1.bias: 20
+module.model.backbone.encoder.layers.1.self_attn.W_Q.weight: 400
+module.model.backbone.encoder.layers.1.self_attn.W_Q.bias: 20
+module.model.backbone.encoder.layers.1.self_attn.W_K.weight: 400
+module.model.backbone.encoder.layers.1.self_attn.W_K.bias: 20
+module.model.backbone.encoder.layers.1.self_attn.W_V.weight: 400
+module.model.backbone.encoder.layers.1.self_attn.W_V.bias: 20
+module.model.backbone.encoder.layers.1.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder.layers.1.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder.layers.1.norm_attn.1.weight: 20
+module.model.backbone.encoder.layers.1.norm_attn.1.bias: 20
+module.model.backbone.encoder.layers.1.ff.0.weight: 2560
+module.model.backbone.encoder.layers.1.ff.0.bias: 128
+module.model.backbone.encoder.layers.1.ff.3.weight: 2560
+module.model.backbone.encoder.layers.1.ff.3.bias: 20
+module.model.backbone.encoder.layers.1.norm_ffn.1.weight: 20
+module.model.backbone.encoder.layers.1.norm_ffn.1.bias: 20
+module.model.backbone.encoder.layers.2.self_attn.W_Q.weight: 400
+module.model.backbone.encoder.layers.2.self_attn.W_Q.bias: 20
+module.model.backbone.encoder.layers.2.self_attn.W_K.weight: 400
+module.model.backbone.encoder.layers.2.self_attn.W_K.bias: 20
+module.model.backbone.encoder.layers.2.self_attn.W_V.weight: 400
+module.model.backbone.encoder.layers.2.self_attn.W_V.bias: 20
+module.model.backbone.encoder.layers.2.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder.layers.2.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder.layers.2.norm_attn.1.weight: 20
+module.model.backbone.encoder.layers.2.norm_attn.1.bias: 20
+module.model.backbone.encoder.layers.2.ff.0.weight: 2560
+module.model.backbone.encoder.layers.2.ff.0.bias: 128
+module.model.backbone.encoder.layers.2.ff.3.weight: 2560
+module.model.backbone.encoder.layers.2.ff.3.bias: 20
+module.model.backbone.encoder.layers.2.norm_ffn.1.weight: 20
+module.model.backbone.encoder.layers.2.norm_ffn.1.bias: 20
+module.model.backbone.encoder_intra.layers.0.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_intra.layers.0.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_intra.layers.0.self_attn.W_K.weight: 400
+module.model.backbone.encoder_intra.layers.0.self_attn.W_K.bias: 20
+module.model.backbone.encoder_intra.layers.0.self_attn.W_V.weight: 400
+module.model.backbone.encoder_intra.layers.0.self_attn.W_V.bias: 20
+module.model.backbone.encoder_intra.layers.0.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_intra.layers.0.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_intra.layers.0.norm_attn.1.weight: 20
+module.model.backbone.encoder_intra.layers.0.norm_attn.1.bias: 20
+module.model.backbone.encoder_intra.layers.0.ff.0.weight: 2560
+module.model.backbone.encoder_intra.layers.0.ff.0.bias: 128
+module.model.backbone.encoder_intra.layers.0.ff.3.weight: 2560
+module.model.backbone.encoder_intra.layers.0.ff.3.bias: 20
+module.model.backbone.encoder_intra.layers.0.norm_ffn.1.weight: 20
+module.model.backbone.encoder_intra.layers.0.norm_ffn.1.bias: 20
+module.model.backbone.encoder_intra.layers.1.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_intra.layers.1.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_intra.layers.1.self_attn.W_K.weight: 400
+module.model.backbone.encoder_intra.layers.1.self_attn.W_K.bias: 20
+module.model.backbone.encoder_intra.layers.1.self_attn.W_V.weight: 400
+module.model.backbone.encoder_intra.layers.1.self_attn.W_V.bias: 20
+module.model.backbone.encoder_intra.layers.1.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_intra.layers.1.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_intra.layers.1.norm_attn.1.weight: 20
+module.model.backbone.encoder_intra.layers.1.norm_attn.1.bias: 20
+module.model.backbone.encoder_intra.layers.1.ff.0.weight: 2560
+module.model.backbone.encoder_intra.layers.1.ff.0.bias: 128
+module.model.backbone.encoder_intra.layers.1.ff.3.weight: 2560
+module.model.backbone.encoder_intra.layers.1.ff.3.bias: 20
+module.model.backbone.encoder_intra.layers.1.norm_ffn.1.weight: 20
+module.model.backbone.encoder_intra.layers.1.norm_ffn.1.bias: 20
+module.model.backbone.encoder_intra.layers.2.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_intra.layers.2.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_intra.layers.2.self_attn.W_K.weight: 400
+module.model.backbone.encoder_intra.layers.2.self_attn.W_K.bias: 20
+module.model.backbone.encoder_intra.layers.2.self_attn.W_V.weight: 400
+module.model.backbone.encoder_intra.layers.2.self_attn.W_V.bias: 20
+module.model.backbone.encoder_intra.layers.2.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_intra.layers.2.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_intra.layers.2.norm_attn.1.weight: 20
+module.model.backbone.encoder_intra.layers.2.norm_attn.1.bias: 20
+module.model.backbone.encoder_intra.layers.2.ff.0.weight: 2560
+module.model.backbone.encoder_intra.layers.2.ff.0.bias: 128
+module.model.backbone.encoder_intra.layers.2.ff.3.weight: 2560
+module.model.backbone.encoder_intra.layers.2.ff.3.bias: 20
+module.model.backbone.encoder_intra.layers.2.norm_ffn.1.weight: 20
+module.model.backbone.encoder_intra.layers.2.norm_ffn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_K.weight: 400
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_K.bias: 20
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_V.weight: 400
+module.model.backbone.encoder_coarse.layers.0.self_attn.W_V.bias: 20
+module.model.backbone.encoder_coarse.layers.0.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_coarse.layers.0.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_coarse.layers.0.norm_attn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.0.norm_attn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.0.ff.0.weight: 2560
+module.model.backbone.encoder_coarse.layers.0.ff.0.bias: 128
+module.model.backbone.encoder_coarse.layers.0.ff.3.weight: 2560
+module.model.backbone.encoder_coarse.layers.0.ff.3.bias: 20
+module.model.backbone.encoder_coarse.layers.0.norm_ffn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.0.norm_ffn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_K.weight: 400
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_K.bias: 20
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_V.weight: 400
+module.model.backbone.encoder_coarse.layers.1.self_attn.W_V.bias: 20
+module.model.backbone.encoder_coarse.layers.1.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_coarse.layers.1.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_coarse.layers.1.norm_attn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.1.norm_attn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.1.ff.0.weight: 2560
+module.model.backbone.encoder_coarse.layers.1.ff.0.bias: 128
+module.model.backbone.encoder_coarse.layers.1.ff.3.weight: 2560
+module.model.backbone.encoder_coarse.layers.1.ff.3.bias: 20
+module.model.backbone.encoder_coarse.layers.1.norm_ffn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.1.norm_ffn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_Q.weight: 400
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_Q.bias: 20
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_K.weight: 400
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_K.bias: 20
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_V.weight: 400
+module.model.backbone.encoder_coarse.layers.2.self_attn.W_V.bias: 20
+module.model.backbone.encoder_coarse.layers.2.self_attn.to_out.0.weight: 400
+module.model.backbone.encoder_coarse.layers.2.self_attn.to_out.0.bias: 20
+module.model.backbone.encoder_coarse.layers.2.norm_attn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.2.norm_attn.1.bias: 20
+module.model.backbone.encoder_coarse.layers.2.ff.0.weight: 2560
+module.model.backbone.encoder_coarse.layers.2.ff.0.bias: 128
+module.model.backbone.encoder_coarse.layers.2.ff.3.weight: 2560
+module.model.backbone.encoder_coarse.layers.2.ff.3.bias: 20
+module.model.backbone.encoder_coarse.layers.2.norm_ffn.1.weight: 20
+module.model.backbone.encoder_coarse.layers.2.norm_ffn.1.bias: 20
+module.model.head.linear.weight: 61200
+module.model.head.linear.bias: 60
+module.model.compress.weight: 360
+module.model.compress.bias: 10
+Total trainable parameters: 128442
+train 581
+val 38
+test 134
+Epoch: 1 cost time: 3.5007846355438232
+[2024-12-08 00:15:16] [32mIntermediate result: 3.368563  (Index 0)[0m
+Epoch: 1, Steps: 12 | Train Loss: 1.1059437 Vali Loss: nan Test Loss: 3.3685629
+Validation loss decreased (inf --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 2 cost time: 2.1067230701446533
+[2024-12-08 00:15:19] [32mIntermediate result: 3.6592813  (Index 1)[0m
+Epoch: 2, Steps: 12 | Train Loss: 1.0896845 Vali Loss: nan Test Loss: 3.6592813
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 3 cost time: 2.197969436645508
+[2024-12-08 00:15:22] [32mIntermediate result: 1.9638449  (Index 2)[0m
+Epoch: 3, Steps: 12 | Train Loss: 0.8857756 Vali Loss: nan Test Loss: 1.9638449
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 4 cost time: 2.0929033756256104
+[2024-12-08 00:15:25] [32mIntermediate result: 2.0358796  (Index 3)[0m
+Epoch: 4, Steps: 12 | Train Loss: 0.7757184 Vali Loss: nan Test Loss: 2.0358796
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 5 cost time: 2.256739854812622
+[2024-12-08 00:15:29] [32mIntermediate result: 2.5424428  (Index 4)[0m
+Epoch: 5, Steps: 12 | Train Loss: 0.7314020 Vali Loss: nan Test Loss: 2.5424428
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 6 cost time: 2.1056344509124756
+[2024-12-08 00:15:32] [32mIntermediate result: 1.9984415  (Index 5)[0m
+Epoch: 6, Steps: 12 | Train Loss: 0.6804755 Vali Loss: nan Test Loss: 1.9984415
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 7 cost time: 2.0654804706573486
+[2024-12-08 00:15:35] [32mIntermediate result: 2.3673546  (Index 6)[0m
+Epoch: 7, Steps: 12 | Train Loss: 0.6618889 Vali Loss: nan Test Loss: 2.3673546
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 8 cost time: 2.301172971725464
+[2024-12-08 00:15:38] [32mIntermediate result: 2.0402615  (Index 7)[0m
+Epoch: 8, Steps: 12 | Train Loss: 0.6418642 Vali Loss: nan Test Loss: 2.0402615
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 9 cost time: 2.296574831008911
+[2024-12-08 00:15:41] [32mIntermediate result: 1.9960904  (Index 8)[0m
+Epoch: 9, Steps: 12 | Train Loss: 0.6219998 Vali Loss: nan Test Loss: 1.9960904
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 10 cost time: 2.286081552505493
+[2024-12-08 00:15:44] [32mIntermediate result: 2.245548  (Index 9)[0m
+Epoch: 10, Steps: 12 | Train Loss: 0.6146728 Vali Loss: nan Test Loss: 2.2455480
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 11 cost time: 2.4326376914978027
+[2024-12-08 00:15:47] [32mIntermediate result: 1.8086958  (Index 10)[0m
+Epoch: 11, Steps: 12 | Train Loss: 0.6014316 Vali Loss: nan Test Loss: 1.8086958
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 12 cost time: 2.185404062271118
+[2024-12-08 00:15:51] [32mIntermediate result: 2.0014539  (Index 11)[0m
+Epoch: 12, Steps: 12 | Train Loss: 0.5869929 Vali Loss: nan Test Loss: 2.0014539
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 13 cost time: 2.0940473079681396
+[2024-12-08 00:15:54] [32mIntermediate result: 1.8354709  (Index 12)[0m
+Epoch: 13, Steps: 12 | Train Loss: 0.5846086 Vali Loss: nan Test Loss: 1.8354709
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 14 cost time: 2.4262046813964844
+[2024-12-08 00:15:57] [32mIntermediate result: 1.7136096  (Index 13)[0m
+Epoch: 14, Steps: 12 | Train Loss: 0.5718589 Vali Loss: nan Test Loss: 1.7136096
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 15 cost time: 2.0951974391937256
+[2024-12-08 00:16:00] [32mIntermediate result: 1.7489684  (Index 14)[0m
+Epoch: 15, Steps: 12 | Train Loss: 0.5602072 Vali Loss: nan Test Loss: 1.7489684
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 16 cost time: 2.1187727451324463
+[2024-12-08 00:16:03] [32mIntermediate result: 1.6130946  (Index 15)[0m
+Epoch: 16, Steps: 12 | Train Loss: 0.5495294 Vali Loss: nan Test Loss: 1.6130946
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 17 cost time: 2.449442148208618
+[2024-12-08 00:16:06] [32mIntermediate result: 1.7947638  (Index 16)[0m
+Epoch: 17, Steps: 12 | Train Loss: 0.5495999 Vali Loss: nan Test Loss: 1.7947638
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 18 cost time: 2.2441635131835938
+[2024-12-08 00:16:09] [32mIntermediate result: 1.465683  (Index 17)[0m
+Epoch: 18, Steps: 12 | Train Loss: 0.5391380 Vali Loss: nan Test Loss: 1.4656830
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 19 cost time: 2.118427038192749
+[2024-12-08 00:16:12] [32mIntermediate result: 1.5038729  (Index 18)[0m
+Epoch: 19, Steps: 12 | Train Loss: 0.5374183 Vali Loss: nan Test Loss: 1.5038729
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 20 cost time: 2.154548406600952
+[2024-12-08 00:16:16] [32mIntermediate result: 1.6511016  (Index 19)[0m
+Epoch: 20, Steps: 12 | Train Loss: 0.5163726 Vali Loss: nan Test Loss: 1.6511016
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 21 cost time: 2.1170244216918945
+[2024-12-08 00:16:19] [32mIntermediate result: 1.515933  (Index 20)[0m
+Epoch: 21, Steps: 12 | Train Loss: 0.5125520 Vali Loss: nan Test Loss: 1.5159330
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 22 cost time: 2.193624973297119
+[2024-12-08 00:16:22] [32mIntermediate result: 1.5442153  (Index 21)[0m
+Epoch: 22, Steps: 12 | Train Loss: 0.5181259 Vali Loss: nan Test Loss: 1.5442153
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 23 cost time: 2.2710859775543213
+[2024-12-08 00:16:25] [32mIntermediate result: 1.5197892  (Index 22)[0m
+Epoch: 23, Steps: 12 | Train Loss: 0.5071128 Vali Loss: nan Test Loss: 1.5197892
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 24 cost time: 2.4392142295837402
+[2024-12-08 00:16:28] [32mIntermediate result: 1.3359797  (Index 23)[0m
+Epoch: 24, Steps: 12 | Train Loss: 0.5111783 Vali Loss: nan Test Loss: 1.3359797
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 25 cost time: 2.2220091819763184
+[2024-12-08 00:16:32] [32mIntermediate result: 1.3967959  (Index 24)[0m
+Epoch: 25, Steps: 12 | Train Loss: 0.5014791 Vali Loss: nan Test Loss: 1.3967959
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 26 cost time: 2.345261573791504
+[2024-12-08 00:16:35] [32mIntermediate result: 1.5167105  (Index 25)[0m
+Epoch: 26, Steps: 12 | Train Loss: 0.4886429 Vali Loss: nan Test Loss: 1.5167105
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 27 cost time: 2.2592060565948486
+[2024-12-08 00:16:38] [32mIntermediate result: 1.3992028  (Index 26)[0m
+Epoch: 27, Steps: 12 | Train Loss: 0.4823264 Vali Loss: nan Test Loss: 1.3992028
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 28 cost time: 2.1104185581207275
+[2024-12-08 00:16:41] [32mIntermediate result: 1.6508875  (Index 27)[0m
+Epoch: 28, Steps: 12 | Train Loss: 0.4882273 Vali Loss: nan Test Loss: 1.6508875
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 29 cost time: 2.2863423824310303
+[2024-12-08 00:16:44] [32mIntermediate result: 1.4260107  (Index 28)[0m
+Epoch: 29, Steps: 12 | Train Loss: 0.4809100 Vali Loss: nan Test Loss: 1.4260107
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 30 cost time: 2.3272881507873535
+[2024-12-08 00:16:47] [32mIntermediate result: 1.5222759  (Index 29)[0m
+Epoch: 30, Steps: 12 | Train Loss: 0.4742695 Vali Loss: nan Test Loss: 1.5222759
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 31 cost time: 2.4097654819488525
+[2024-12-08 00:16:51] [32mIntermediate result: 1.2894843  (Index 30)[0m
+Epoch: 31, Steps: 12 | Train Loss: 0.4777311 Vali Loss: nan Test Loss: 1.2894843
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 32 cost time: 2.2094342708587646
+[2024-12-08 00:16:54] [32mIntermediate result: 1.4938047  (Index 31)[0m
+Epoch: 32, Steps: 12 | Train Loss: 0.4693388 Vali Loss: nan Test Loss: 1.4938047
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 33 cost time: 2.5268020629882812
+[2024-12-08 00:16:57] [32mIntermediate result: 1.4255004  (Index 32)[0m
+Epoch: 33, Steps: 12 | Train Loss: 0.4655095 Vali Loss: nan Test Loss: 1.4255004
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 34 cost time: 2.2348008155822754
+[2024-12-08 00:17:00] [32mIntermediate result: 1.4670638  (Index 33)[0m
+Epoch: 34, Steps: 12 | Train Loss: 0.4674278 Vali Loss: nan Test Loss: 1.4670638
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 35 cost time: 2.242664098739624
+[2024-12-08 00:17:03] [32mIntermediate result: 1.5140524  (Index 34)[0m
+Epoch: 35, Steps: 12 | Train Loss: 0.4577601 Vali Loss: nan Test Loss: 1.5140524
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 36 cost time: 2.5029890537261963
+[2024-12-08 00:17:07] [32mIntermediate result: 1.306182  (Index 35)[0m
+Epoch: 36, Steps: 12 | Train Loss: 0.4577796 Vali Loss: nan Test Loss: 1.3061820
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 37 cost time: 2.1923320293426514
+[2024-12-08 00:17:10] [32mIntermediate result: 1.4027543  (Index 36)[0m
+Epoch: 37, Steps: 12 | Train Loss: 0.4593540 Vali Loss: nan Test Loss: 1.4027543
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 38 cost time: 2.2918007373809814
+[2024-12-08 00:17:13] [32mIntermediate result: 1.2714598  (Index 37)[0m
+Epoch: 38, Steps: 12 | Train Loss: 0.4481152 Vali Loss: nan Test Loss: 1.2714598
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 39 cost time: 2.1919209957122803
+[2024-12-08 00:17:16] [32mIntermediate result: 1.4717495  (Index 38)[0m
+Epoch: 39, Steps: 12 | Train Loss: 0.4474918 Vali Loss: nan Test Loss: 1.4717495
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 40 cost time: 2.420363426208496
+[2024-12-08 00:17:20] [32mIntermediate result: 1.2733401  (Index 39)[0m
+Epoch: 40, Steps: 12 | Train Loss: 0.4470927 Vali Loss: nan Test Loss: 1.2733401
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 41 cost time: 2.3457419872283936
+[2024-12-08 00:17:23] [32mIntermediate result: 1.581668  (Index 40)[0m
+Epoch: 41, Steps: 12 | Train Loss: 0.4466717 Vali Loss: nan Test Loss: 1.5816680
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 42 cost time: 2.1031880378723145
+[2024-12-08 00:17:26] [32mIntermediate result: 1.1740723  (Index 41)[0m
+Epoch: 42, Steps: 12 | Train Loss: 0.4390980 Vali Loss: nan Test Loss: 1.1740723
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 43 cost time: 2.3470299243927
+[2024-12-08 00:17:29] [32mIntermediate result: 1.323591  (Index 42)[0m
+Epoch: 43, Steps: 12 | Train Loss: 0.4360194 Vali Loss: nan Test Loss: 1.3235910
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 44 cost time: 2.4007568359375
+[2024-12-08 00:17:32] [32mIntermediate result: 1.3629675  (Index 43)[0m
+Epoch: 44, Steps: 12 | Train Loss: 0.4352828 Vali Loss: nan Test Loss: 1.3629675
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 45 cost time: 2.1491003036499023
+[2024-12-08 00:17:35] [32mIntermediate result: 1.2940956  (Index 44)[0m
+Epoch: 45, Steps: 12 | Train Loss: 0.4279852 Vali Loss: nan Test Loss: 1.2940956
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 46 cost time: 2.5342609882354736
+[2024-12-08 00:17:39] [32mIntermediate result: 1.4538397  (Index 45)[0m
+Epoch: 46, Steps: 12 | Train Loss: 0.4322584 Vali Loss: nan Test Loss: 1.4538397
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 47 cost time: 2.3070483207702637
+[2024-12-08 00:17:42] [32mIntermediate result: 1.3718514  (Index 46)[0m
+Epoch: 47, Steps: 12 | Train Loss: 0.4336100 Vali Loss: nan Test Loss: 1.3718514
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 48 cost time: 2.249617338180542
+[2024-12-08 00:17:45] [32mIntermediate result: 1.322964  (Index 47)[0m
+Epoch: 48, Steps: 12 | Train Loss: 0.4433045 Vali Loss: nan Test Loss: 1.3229640
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 49 cost time: 2.5315053462982178
+[2024-12-08 00:17:49] [32mIntermediate result: 1.5298557  (Index 48)[0m
+Epoch: 49, Steps: 12 | Train Loss: 0.4473492 Vali Loss: nan Test Loss: 1.5298557
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 50 cost time: 2.1202056407928467
+[2024-12-08 00:17:52] [32mIntermediate result: 1.1691414  (Index 49)[0m
+Epoch: 50, Steps: 12 | Train Loss: 0.4232100 Vali Loss: nan Test Loss: 1.1691414
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 51 cost time: 2.098222255706787
+[2024-12-08 00:17:55] [32mIntermediate result: 1.3831432  (Index 50)[0m
+Epoch: 51, Steps: 12 | Train Loss: 0.4250404 Vali Loss: nan Test Loss: 1.3831432
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 52 cost time: 2.1895246505737305
+[2024-12-08 00:17:58] [32mIntermediate result: 1.2896276  (Index 51)[0m
+Epoch: 52, Steps: 12 | Train Loss: 0.4222954 Vali Loss: nan Test Loss: 1.2896276
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 53 cost time: 2.178626298904419
+[2024-12-08 00:18:01] [32mIntermediate result: 1.4104912  (Index 52)[0m
+Epoch: 53, Steps: 12 | Train Loss: 0.4120951 Vali Loss: nan Test Loss: 1.4104912
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 54 cost time: 2.131338357925415
+[2024-12-08 00:18:04] [32mIntermediate result: 1.3887823  (Index 53)[0m
+Epoch: 54, Steps: 12 | Train Loss: 0.4198164 Vali Loss: nan Test Loss: 1.3887823
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 55 cost time: 2.182136058807373
+[2024-12-08 00:18:07] [32mIntermediate result: 1.2854424  (Index 54)[0m
+Epoch: 55, Steps: 12 | Train Loss: 0.4164827 Vali Loss: nan Test Loss: 1.2854424
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 56 cost time: 2.416782855987549
+[2024-12-08 00:18:10] [32mIntermediate result: 1.3780625  (Index 55)[0m
+Epoch: 56, Steps: 12 | Train Loss: 0.4241544 Vali Loss: nan Test Loss: 1.3780625
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 57 cost time: 2.3013949394226074
+[2024-12-08 00:18:13] [32mIntermediate result: 1.4141767  (Index 56)[0m
+Epoch: 57, Steps: 12 | Train Loss: 0.4119768 Vali Loss: nan Test Loss: 1.4141767
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 58 cost time: 2.160155773162842
+[2024-12-08 00:18:16] [32mIntermediate result: 1.2608501  (Index 57)[0m
+Epoch: 58, Steps: 12 | Train Loss: 0.4143806 Vali Loss: nan Test Loss: 1.2608501
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 59 cost time: 2.235318660736084
+[2024-12-08 00:18:20] [32mIntermediate result: 1.4389634  (Index 58)[0m
+Epoch: 59, Steps: 12 | Train Loss: 0.4049905 Vali Loss: nan Test Loss: 1.4389634
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 60 cost time: 2.159057855606079
+[2024-12-08 00:18:23] [32mIntermediate result: 1.2801015  (Index 59)[0m
+Epoch: 60, Steps: 12 | Train Loss: 0.4069435 Vali Loss: nan Test Loss: 1.2801015
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 61 cost time: 2.2497894763946533
+[2024-12-08 00:18:26] [32mIntermediate result: 1.3723116  (Index 60)[0m
+Epoch: 61, Steps: 12 | Train Loss: 0.4123103 Vali Loss: nan Test Loss: 1.3723116
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 62 cost time: 2.430727481842041
+[2024-12-08 00:18:29] [32mIntermediate result: 1.4693923  (Index 61)[0m
+Epoch: 62, Steps: 12 | Train Loss: 0.4153456 Vali Loss: nan Test Loss: 1.4693923
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 63 cost time: 2.3261594772338867
+[2024-12-08 00:18:33] [32mIntermediate result: 1.4668975  (Index 62)[0m
+Epoch: 63, Steps: 12 | Train Loss: 0.4045792 Vali Loss: nan Test Loss: 1.4668975
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 64 cost time: 2.3788294792175293
+[2024-12-08 00:18:36] [32mIntermediate result: 1.2820147  (Index 63)[0m
+Epoch: 64, Steps: 12 | Train Loss: 0.3997449 Vali Loss: nan Test Loss: 1.2820147
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 65 cost time: 2.3868446350097656
+[2024-12-08 00:18:39] [32mIntermediate result: 1.321559  (Index 64)[0m
+Epoch: 65, Steps: 12 | Train Loss: 0.4036517 Vali Loss: nan Test Loss: 1.3215590
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 66 cost time: 2.212841749191284
+[2024-12-08 00:18:42] [32mIntermediate result: 1.4597778  (Index 65)[0m
+Epoch: 66, Steps: 12 | Train Loss: 0.3965906 Vali Loss: nan Test Loss: 1.4597778
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 67 cost time: 2.238375186920166
+[2024-12-08 00:18:45] [32mIntermediate result: 1.284763  (Index 66)[0m
+Epoch: 67, Steps: 12 | Train Loss: 0.4028972 Vali Loss: nan Test Loss: 1.2847630
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 68 cost time: 2.336782455444336
+[2024-12-08 00:18:49] [32mIntermediate result: 1.5149167  (Index 67)[0m
+Epoch: 68, Steps: 12 | Train Loss: 0.3913469 Vali Loss: nan Test Loss: 1.5149167
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 69 cost time: 2.1351447105407715
+[2024-12-08 00:18:52] [32mIntermediate result: 1.3068671  (Index 68)[0m
+Epoch: 69, Steps: 12 | Train Loss: 0.3981047 Vali Loss: nan Test Loss: 1.3068671
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 70 cost time: 2.2565624713897705
+[2024-12-08 00:18:55] [32mIntermediate result: 1.4310105  (Index 69)[0m
+Epoch: 70, Steps: 12 | Train Loss: 0.4063620 Vali Loss: nan Test Loss: 1.4310105
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 71 cost time: 2.4722533226013184
+[2024-12-08 00:18:58] [32mIntermediate result: 1.4612391  (Index 70)[0m
+Epoch: 71, Steps: 12 | Train Loss: 0.4005808 Vali Loss: nan Test Loss: 1.4612391
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 72 cost time: 2.2906744480133057
+[2024-12-08 00:19:01] [32mIntermediate result: 1.2465513  (Index 71)[0m
+Epoch: 72, Steps: 12 | Train Loss: 0.3983073 Vali Loss: nan Test Loss: 1.2465513
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 73 cost time: 2.1400232315063477
+[2024-12-08 00:19:04] [32mIntermediate result: 1.2793307  (Index 72)[0m
+Epoch: 73, Steps: 12 | Train Loss: 0.3918726 Vali Loss: nan Test Loss: 1.2793307
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 74 cost time: 2.425041675567627
+[2024-12-08 00:19:08] [32mIntermediate result: 1.2946151  (Index 73)[0m
+Epoch: 74, Steps: 12 | Train Loss: 0.3883640 Vali Loss: nan Test Loss: 1.2946151
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 75 cost time: 2.13134765625
+[2024-12-08 00:19:11] [32mIntermediate result: 1.3574165  (Index 74)[0m
+Epoch: 75, Steps: 12 | Train Loss: 0.3919670 Vali Loss: nan Test Loss: 1.3574165
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 76 cost time: 2.1083579063415527
+[2024-12-08 00:19:14] [32mIntermediate result: 1.4488626  (Index 75)[0m
+Epoch: 76, Steps: 12 | Train Loss: 0.3902798 Vali Loss: nan Test Loss: 1.4488626
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 77 cost time: 2.2630062103271484
+[2024-12-08 00:19:17] [32mIntermediate result: 1.4398907  (Index 76)[0m
+Epoch: 77, Steps: 12 | Train Loss: 0.3838163 Vali Loss: nan Test Loss: 1.4398907
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 78 cost time: 2.2376511096954346
+[2024-12-08 00:19:20] [32mIntermediate result: 1.4084541  (Index 77)[0m
+Epoch: 78, Steps: 12 | Train Loss: 0.3861249 Vali Loss: nan Test Loss: 1.4084541
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 79 cost time: 2.1793015003204346
+[2024-12-08 00:19:23] [32mIntermediate result: 1.4598423  (Index 78)[0m
+Epoch: 79, Steps: 12 | Train Loss: 0.3924934 Vali Loss: nan Test Loss: 1.4598423
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 80 cost time: 2.2431747913360596
+[2024-12-08 00:19:26] [32mIntermediate result: 1.4824351  (Index 79)[0m
+Epoch: 80, Steps: 12 | Train Loss: 0.3941031 Vali Loss: nan Test Loss: 1.4824351
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 81 cost time: 2.1714446544647217
+[2024-12-08 00:19:29] [32mIntermediate result: 1.3918512  (Index 80)[0m
+Epoch: 81, Steps: 12 | Train Loss: 0.3922466 Vali Loss: nan Test Loss: 1.3918512
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 82 cost time: 2.1882498264312744
+[2024-12-08 00:19:32] [32mIntermediate result: 1.5221463  (Index 81)[0m
+Epoch: 82, Steps: 12 | Train Loss: 0.3870784 Vali Loss: nan Test Loss: 1.5221463
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 83 cost time: 2.3564116954803467
+[2024-12-08 00:19:36] [32mIntermediate result: 1.360347  (Index 82)[0m
+Epoch: 83, Steps: 12 | Train Loss: 0.3869637 Vali Loss: nan Test Loss: 1.3603470
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 84 cost time: 2.1785316467285156
+[2024-12-08 00:19:39] [32mIntermediate result: 1.3103211  (Index 83)[0m
+Epoch: 84, Steps: 12 | Train Loss: 0.3851283 Vali Loss: nan Test Loss: 1.3103211
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 85 cost time: 2.1496682167053223
+[2024-12-08 00:19:42] [32mIntermediate result: 1.4887855  (Index 84)[0m
+Epoch: 85, Steps: 12 | Train Loss: 0.3857422 Vali Loss: nan Test Loss: 1.4887855
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 86 cost time: 2.351025342941284
+[2024-12-08 00:19:45] [32mIntermediate result: 1.3790506  (Index 85)[0m
+Epoch: 86, Steps: 12 | Train Loss: 0.3764730 Vali Loss: nan Test Loss: 1.3790506
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 87 cost time: 2.185985565185547
+[2024-12-08 00:19:48] [32mIntermediate result: 1.5532064  (Index 86)[0m
+Epoch: 87, Steps: 12 | Train Loss: 0.3822503 Vali Loss: nan Test Loss: 1.5532064
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 88 cost time: 2.105978488922119
+[2024-12-08 00:19:51] [32mIntermediate result: 1.2287531  (Index 87)[0m
+Epoch: 88, Steps: 12 | Train Loss: 0.3806598 Vali Loss: nan Test Loss: 1.2287531
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 89 cost time: 2.1826741695404053
+[2024-12-08 00:19:54] [32mIntermediate result: 1.5833898  (Index 88)[0m
+Epoch: 89, Steps: 12 | Train Loss: 0.3759432 Vali Loss: nan Test Loss: 1.5833898
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 90 cost time: 2.1821699142456055
+[2024-12-08 00:19:57] [32mIntermediate result: 1.2682534  (Index 89)[0m
+Epoch: 90, Steps: 12 | Train Loss: 0.3783770 Vali Loss: nan Test Loss: 1.2682534
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 91 cost time: 2.143075466156006
+[2024-12-08 00:20:00] [32mIntermediate result: 1.4025066  (Index 90)[0m
+Epoch: 91, Steps: 12 | Train Loss: 0.3818810 Vali Loss: nan Test Loss: 1.4025066
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 92 cost time: 2.1101877689361572
+[2024-12-08 00:20:03] [32mIntermediate result: 1.4700174  (Index 91)[0m
+Epoch: 92, Steps: 12 | Train Loss: 0.3698565 Vali Loss: nan Test Loss: 1.4700174
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 93 cost time: 2.290567398071289
+[2024-12-08 00:20:07] [32mIntermediate result: 1.3477056  (Index 92)[0m
+Epoch: 93, Steps: 12 | Train Loss: 0.3759739 Vali Loss: nan Test Loss: 1.3477056
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 94 cost time: 2.193504571914673
+[2024-12-08 00:20:10] [32mIntermediate result: 1.300595  (Index 93)[0m
+Epoch: 94, Steps: 12 | Train Loss: 0.3816274 Vali Loss: nan Test Loss: 1.3005950
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 95 cost time: 2.1635549068450928
+[2024-12-08 00:20:13] [32mIntermediate result: 1.38574  (Index 94)[0m
+Epoch: 95, Steps: 12 | Train Loss: 0.3783066 Vali Loss: nan Test Loss: 1.3857400
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 96 cost time: 2.308009147644043
+[2024-12-08 00:20:16] [32mIntermediate result: 1.3369935  (Index 95)[0m
+Epoch: 96, Steps: 12 | Train Loss: 0.3710763 Vali Loss: nan Test Loss: 1.3369935
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 97 cost time: 2.1729705333709717
+[2024-12-08 00:20:19] [32mIntermediate result: 1.3759575  (Index 96)[0m
+Epoch: 97, Steps: 12 | Train Loss: 0.3673777 Vali Loss: nan Test Loss: 1.3759575
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 98 cost time: 2.283479928970337
+[2024-12-08 00:20:22] [32mIntermediate result: 1.345566  (Index 97)[0m
+Epoch: 98, Steps: 12 | Train Loss: 0.3674127 Vali Loss: nan Test Loss: 1.3455660
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 99 cost time: 2.268585681915283
+[2024-12-08 00:20:25] [32mIntermediate result: 1.3412397  (Index 98)[0m
+Epoch: 99, Steps: 12 | Train Loss: 0.3671631 Vali Loss: nan Test Loss: 1.3412397
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+Epoch: 100 cost time: 2.177321195602417
+[2024-12-08 00:20:28] [32mIntermediate result: 1.3745252  (Index 99)[0m
+Epoch: 100, Steps: 12 | Train Loss: 0.3709562 Vali Loss: nan Test Loss: 1.3745252
+Validation loss decreased (nan --> nan).  Saving model ...
+Updating learning rate to 0.0025
+>>>>>>>testing : 24_1_1_36_60_MGSformer_TST_custom_ftM_sl36_ll18_pl60_dm20_nh4_el3_dl1_df128_fc1_ebtimeF_dtTrue_Exp_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 134
+mse:1.3745251893997192, mae:0.76902174949646, rse:0.61234050989151
+[2024-12-08 00:20:29] [32mFinal result: 1.3745252[0m
