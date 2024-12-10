@@ -60,6 +60,7 @@ class MGSformer_backbone(nn.Module):
         self.period = configs.period
         self.n = configs.n
         self.n_intra = configs.n_intra
+        self.traffic = configs.traffic
         
         # period
         if self.seq_len % self.period == 0:
@@ -69,15 +70,22 @@ class MGSformer_backbone(nn.Module):
             self.seq_len += self.period-self.seq_len%self.period
             
         # Backbone
-        self.backbone = TSTiEncoder(c_in*configs.compress_len, c_in, self.period, self.n, self.n_intra, num_period, patch_num=patch_num, patch_len=patch_len, max_seq_len=max_seq_len,
-                                n_layers=n_layers, d_model=d_model, n_heads=n_heads, d_k=d_k, d_v=d_v, d_ff=d_ff,
-                                attn_dropout=attn_dropout, dropout=dropout, act=act, key_padding_mask=key_padding_mask, padding_var=padding_var,
-                                attn_mask=attn_mask, res_attention=res_attention, pre_norm=pre_norm, store_attn=store_attn,
-                                pe=pe, learn_pe=learn_pe, verbose=verbose, **kwargs)
+        if self.traffic:
+            self.backbone = TSTiEncoder(c_in*context_window, c_in, self.period, self.n, self.n_intra, num_period, patch_num=patch_num, patch_len=patch_len, max_seq_len=max_seq_len,
+                                    n_layers=n_layers, d_model=d_model, n_heads=n_heads, d_k=d_k, d_v=d_v, d_ff=d_ff,
+                                    attn_dropout=attn_dropout, dropout=dropout, act=act, key_padding_mask=key_padding_mask, padding_var=padding_var,
+                                    attn_mask=attn_mask, res_attention=res_attention, pre_norm=pre_norm, store_attn=store_attn,
+                                    pe=pe, learn_pe=learn_pe, verbose=verbose, **kwargs)
+        else:
+            self.backbone = TSTiEncoder(c_in*configs.compress_len, c_in, self.period, self.n, self.n_intra, num_period, patch_num=patch_num, patch_len=patch_len, max_seq_len=max_seq_len,
+                        n_layers=n_layers, d_model=d_model, n_heads=n_heads, d_k=d_k, d_v=d_v, d_ff=d_ff,
+                        attn_dropout=attn_dropout, dropout=dropout, act=act, key_padding_mask=key_padding_mask, padding_var=padding_var,
+                        attn_mask=attn_mask, res_attention=res_attention, pre_norm=pre_norm, store_attn=store_attn,
+                        pe=pe, learn_pe=learn_pe, verbose=verbose, **kwargs)
 
         self.head = Flatten_Head(self.individual, self.n_vars, d_model + num_period*d_model + num_period*self.period*d_model, target_window, head_dropout=head_dropout)
         self.compress = nn.Linear(context_window, configs.compress_len)
-        
+
     def forward(self, z):                                                                   # z: [bs x c x seq_len]
         device = z.device
         # norm
@@ -88,7 +96,10 @@ class MGSformer_backbone(nn.Module):
 
         b, c, l = z.size()
         ######################## coarse-scale 
-        z_compressed = self.compress(z)              # [b, c, 10]
+        if self.traffic:
+            z_compressed = z
+        else:
+            z_compressed = self.compress(z)              # [b, c, 10]
         padded_coarse = torch.zeros(b, c, c, z_compressed.shape[-1], device=device)  # padded: [b, num_dynamic, c*10]
         flag = 0
         for u in range(0, c, 1):  # u: [0, num_period-1]
